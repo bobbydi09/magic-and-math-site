@@ -38,8 +38,9 @@ assets/
 - `Academy.png` и `assets/images/academy.webp`: главная академия на первом экране.
 - `assets/images/logo.png`: утверждённый логотип (фон прозрачный). Используется в шапке и подвале.
 - `assets/images/alator.webp`: портрет Алатора, раздел «О проекте».
-- `assets/images/game-map.webp`, `game-world.webp`, `game-theory.webp`: реальные кадры
-  игры, раздел «Загляни в мир игры». Верхние части кадров с отладочными
+- `assets/images/game-map.webp`, `game-world.webp`: кадры игры, раздел «Загляни в мир игры».
+- `assets/images/explore-*.webp`, `practice-task.webp`, `dialog-*.webp`: кадры для раздела
+  «Что ждёт в игре». Верхние части кадров с отладочными
   надписями («DEBUG», «(отл)») обрезаны. Новые кадры добавлять только без таких надписей.
 
 ## Что ещё добавить

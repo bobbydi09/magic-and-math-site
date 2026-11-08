@@ -710,7 +710,9 @@ details p {
 
 .shots {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 820px;
+  margin: 0 auto;
   gap: 20px;
   align-items: start;
 }
@@ -766,6 +768,14 @@ details p {
 .feature-row.reverse .feature-text { order: 2; }
 .feature-row.reverse .feature-shot { order: 1; }
 
+.features-more {
+  margin: 8px 0 0;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--purple);
+}
+
 .feature-shot {
   max-width: 360px;
   margin: 0 auto;
@@ -820,7 +830,6 @@ details p {
   .cards { grid-template-columns: 1fr; }
   .learn-grid { grid-template-columns: 1fr; }
   .shots { grid-template-columns: 1fr 1fr; }
-  .shots .shot:last-child { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%; }
   .feature-row { grid-template-columns: 1fr; gap: 26px; margin-bottom: 52px; }
   .feature-row.reverse .feature-text { order: 0; }
   .feature-row.reverse .feature-shot { order: 0; }
