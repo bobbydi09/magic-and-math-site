@@ -727,6 +727,52 @@ details p {
   height: auto;
 }
 
+/* ---------- Возможности игры ---------- */
+
+.feature-block {
+  margin-bottom: 64px;
+}
+.feature-text h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.feature-text p {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0;
+  max-width: 520px;
+}
+.feature-block .feature-text {
+  margin-bottom: 26px;
+}
+
+.explore-strip {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.explore-strip .shot img {
+  height: auto;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.feature-row.reverse .feature-text { order: 2; }
+.feature-row.reverse .feature-shot { order: 1; }
+
+.feature-shot {
+  max-width: 360px;
+  margin: 0 auto;
+  justify-self: center;
+  width: 100%;
+}
+
 /* ---------- Адаптивность ---------- */
 
 @media (max-width: 1024px) {
@@ -775,6 +821,12 @@ details p {
   .learn-grid { grid-template-columns: 1fr; }
   .shots { grid-template-columns: 1fr 1fr; }
   .shots .shot:last-child { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%; }
+  .feature-row { grid-template-columns: 1fr; gap: 26px; margin-bottom: 52px; }
+  .feature-row.reverse .feature-text { order: 0; }
+  .feature-row.reverse .feature-shot { order: 0; }
+  .feature-block { margin-bottom: 52px; }
+  .explore-strip { grid-template-columns: 1fr 1fr; }
+  .explore-strip .shot:first-child { grid-column: 1 / -1; }
   .format-box { grid-template-columns: 1fr; padding: 30px; gap: 24px; }
   .price-area { grid-template-columns: 1fr; }
   .roadmap { grid-template-columns: 1fr 1fr; }
@@ -819,6 +871,9 @@ details p {
   .roadmap { grid-template-columns: 1fr; }
   .shots { grid-template-columns: 1fr; }
   .shots .shot:last-child { max-width: none; }
+  .explore-strip { grid-template-columns: 1fr; }
+  .explore-strip .shot:first-child { grid-column: auto; }
+  .feature-shot { max-width: 300px; }
   .coming { display: block; }
   .coming .btn { margin-top: 15px; width: 100%; }
   .coming .pending-text { margin-top: 12px; max-width: none; }
