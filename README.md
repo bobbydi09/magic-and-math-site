@@ -37,7 +37,7 @@ assets/
 
 - `Academy.png` и `assets/images/academy.webp`: главная академия на первом экране.
 - `assets/images/logo.png`: утверждённый логотип (фон прозрачный). Используется в шапке и подвале.
-- `assets/images/alator.webp`: портрет Алатора, раздел «О проекте».
+- `assets/images/world-mill.webp`: концепт «Волшебная мельница», баннер в разделе «О проекте». Не реальный кадр игры.
 - `assets/images/game-map.webp`, `game-world.webp`: кадры игры, раздел «Загляни в мир игры».
 - `assets/images/explore-*.webp`, `practice-task.webp`, `dialog-*.webp`: кадры для раздела
   «Что ждёт в игре». Верхние части кадров с отладочными
