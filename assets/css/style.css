@@ -668,6 +668,65 @@ details p {
   font-size: 14px;
 }
 
+/* ---------- Логотип ---------- */
+
+.brand-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+.site-footer .brand-logo { height: 48px; }
+
+/* ---------- Персонаж ---------- */
+
+.character {
+  margin: 40px auto 0;
+  max-width: 340px;
+  text-align: center;
+}
+.character img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 40px #50323822;
+}
+.character figcaption {
+  margin-top: 14px;
+  display: grid;
+  gap: 2px;
+}
+.character figcaption strong {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+.character figcaption span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---------- Игровые кадры ---------- */
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.shot {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 10px 30px #50323809;
+}
+.shot img {
+  width: 100%;
+  height: auto;
+}
+
 /* ---------- Адаптивность ---------- */
 
 @media (max-width: 1024px) {
@@ -714,6 +773,8 @@ details p {
 
   .cards { grid-template-columns: 1fr; }
   .learn-grid { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: 1fr 1fr; }
+  .shots .shot:last-child { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%; }
   .format-box { grid-template-columns: 1fr; padding: 30px; gap: 24px; }
   .price-area { grid-template-columns: 1fr; }
   .roadmap { grid-template-columns: 1fr 1fr; }
@@ -741,7 +802,8 @@ details p {
 
 @media (max-width: 540px) {
   .container { width: min(100% - 28px, 1120px); }
-  .brand { font-size: 16px; }
+  .brand-logo { height: 46px; }
+  .site-footer .brand-logo { height: 40px; }
   .mark { width: 37px; height: 37px; font-size: 22px; }
   .nav { min-height: 64px; }
   :root { --header-h: 64px; }
@@ -755,6 +817,8 @@ details p {
   .price { padding: 26px; }
   .price .amount { font-size: 44px; }
   .roadmap { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: 1fr; }
+  .shots .shot:last-child { max-width: none; }
   .coming { display: block; }
   .coming .btn { margin-top: 15px; width: 100%; }
   .coming .pending-text { margin-top: 12px; max-width: none; }
