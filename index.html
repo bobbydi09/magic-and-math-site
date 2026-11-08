@@ -1,280 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#201530">
-  <meta name="description" content="Магия и Математика — образовательная фэнтези-RPG по профильной математике ЕГЭ. Сюжет, интерактивная теория и практика. Первые три главы бесплатно.">
+
+  <title>Магия и Математика — образовательная RPG по математике ЕГЭ</title>
+  <meta name="description" content="Магия и Математика — образовательная фэнтези-RPG по профильной математике ЕГЭ. Приключение, интерактивная теория и практика. Первые три главы бесплатно.">
+  <link rel="canonical" href="https://bobbydi09.github.io/magic-and-math-site/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Магия и Математика">
-  <meta property="og:description" content="Математика становится приключением. Образовательная фэнтези-RPG по профильной математике ЕГЭ.">
-  <title>Магия и Математика — образовательная фэнтези-RPG</title>
-  <style>
-    :root {
-      --night:#201530;
-      --purple:#6f438f;
-      --violet:#a98bd2;
-      --gold:#ddb77a;
-      --cream:#fff1d7;
-      --paper:#f8f1e8;
-      --ink:#382d39;
-      --muted:#74697b;
-      --border:#e8dbca;
-    }
-    * {box-sizing:border-box}
-    html {scroll-behavior:smooth}
-    body {
-      margin:0;
-      font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;
-      color:var(--ink);
-      background:#faf7f3;
-    }
-    a {color:inherit;text-decoration:none}
-    button,a { -webkit-tap-highlight-color:transparent }
-    a:focus-visible,summary:focus-visible {
-      outline:3px solid #e3af54;outline-offset:4px;
-    }
-    .container {width:min(1120px,calc(100% - 40px));margin:auto}
-    header {
-      position:sticky;top:0;z-index:10;
-      background:#201530f0;
-      border-bottom:1px solid #f4d8a329;
-      backdrop-filter:blur(14px);
-    }
-    .nav {
-      min-height:72px;display:flex;align-items:center;
-      justify-content:space-between;gap:20px;
-    }
-    .brand {
-      display:flex;align-items:center;gap:12px;
-      font-family:Georgia,serif;color:var(--cream);
-      font-size:20px;font-weight:bold;line-height:1.1;
-    }
-    .mark {
-      width:43px;height:43px;border:1px solid var(--gold);
-      border-radius:14px;display:grid;place-items:center;
-      color:var(--gold);font-size:25px;
-      background:#ffffff0c;flex-shrink:0;
-    }
-    .navlinks {display:flex;gap:25px;align-items:center}
-    .navlinks a {font-size:13px;color:#dfd4ed}
-    .navlinks a:hover {color:var(--gold)}
-    .small-action {
-      border:1px solid var(--gold);border-radius:11px;
-      padding:9px 16px;color:var(--cream)!important;
-    }
-    .hero {
-      position:relative;overflow:hidden;
-      background:radial-gradient(ellipse at 75% 30%,#5b3b84 0%,transparent 50%),
-                 linear-gradient(135deg,#201530,#352149 65%,#422c56);
-      color:var(--cream);
-    }
-    .hero:before {
-      content:"";position:absolute;inset:0;opacity:.18;
-      background-image:radial-gradient(#fff 1px,transparent 1px);
-      background-size:45px 45px;pointer-events:none;
-    }
-    .hero-grid {
-      position:relative;display:grid;
-      grid-template-columns:1fr 1.04fr;
-      gap:40px;align-items:center;
-      padding-top:88px;padding-bottom:92px;
-    }
-    .eyebrow {
-      display:inline-block;color:var(--gold);
-      text-transform:uppercase;letter-spacing:.19em;
-      font-size:11px;font-weight:750;margin-bottom:19px;
-    }
-    h1,h2,h3 {font-family:Georgia,"Times New Roman",serif;line-height:1.16}
-    h1 {font-size:clamp(46px,5.6vw,78px);font-weight:500;margin:0 0 19px;letter-spacing:-.03em}
-    h1 em {display:block;font-style:normal;color:#e0bf84}
-    .lead {font-size:18px;color:#e0d5e5;max-width:530px}
-    .actions {display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
-    .btn {
-      min-height:48px;display:inline-flex;align-items:center;
-      justify-content:center;text-align:center;
-      padding:12px 22px;border-radius:12px;
-      font-weight:650;font-size:14px;transition:transform .18s,background .18s;
-    }
-    .btn:hover {transform:translateY(-2px)}
-    .btn-primary {background:var(--gold);color:#291c31}
-    .btn-outline {border:1px solid #b69bbf;color:var(--cream)}
-    .micro {font-size:12px;color:#bcb0c8;margin-top:21px}
-    .art {
-      min-height:450px;position:relative;display:grid;
-      place-items:center;border-radius:26px;overflow:hidden;
-      border:1px solid #e2b87855;
-      box-shadow:0 28px 75px #08031255;
-      background:#292044;
-    }
-    .art svg {display:block;width:100%;height:100%}
-    .art .real-art {
-      position:absolute;inset:0;width:100%;height:100%;
-      object-fit:cover;z-index:2;
-    }
-    .art-caption {
-      position:absolute;left:14px;bottom:14px;z-index:3;
-      font-size:11px;color:#f4e7ff;
-      padding:6px 10px;border-radius:9px;background:#160f218f;
-    }
-    .section {padding:86px 0}
-    .section-alt {background:var(--paper)}
-    .section-heading {max-width:700px;margin-bottom:34px}
-    .kicker {
-      color:#846298;text-transform:uppercase;
-      letter-spacing:.18em;font-size:11px;font-weight:800;
-    }
-    h2 {font-size:clamp(32px,4vw,48px);margin:12px 0 16px;font-weight:500}
-    .intro {font-size:17px;color:var(--muted);margin:0}
-    .cards {display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-    .card {
-      padding:28px;border:1px solid var(--border);border-radius:20px;
-      background:white;box-shadow:0 10px 30px #50323809;
-    }
-    .feature-icon {
-      width:54px;height:54px;border-radius:15px;display:grid;
-      place-items:center;background:#eee5f4;color:#69348e;
-      font-size:27px;margin-bottom:20px;
-    }
-    h3 {font-size:25px;font-weight:500;margin:0 0 12px}
-    .card p {color:var(--muted);margin:0;font-size:14px}
-    .path {
-      margin-top:22px;display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border:1px solid #e9d9c0;border-radius:18px;
-      overflow:hidden;background:#fffaf3;
-    }
-    .path span {padding:17px 14px;text-align:center;font-size:13px;font-weight:700}
-    .path span+span {border-left:1px solid #e9d9c0}
-    .showcase {display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
-    .show-card {
-      background:white;border:1px solid var(--border);
-      border-radius:22px;overflow:hidden;
-    }
-    .show-image {
-      height:250px;position:relative;overflow:hidden;
-      display:grid;place-items:center;
-      background:linear-gradient(160deg,#82b1bc,#c4d9dc);
-    }
-    .show-image img {
-      width:100%;height:100%;position:absolute;
-      z-index:2;object-fit:cover;
-    }
-    .mock {
-      width:76%;padding:20px;
-      border-radius:15px;background:#fff5e5;
-      box-shadow:0 15px 40px #325a6638;
-      text-align:center;color:#443331;
-    }
-    .mock .topline {font-size:12px;color:#8d7594}
-    .mock .formula {font:26px Georgia,serif;margin:12px 0}
-    .mock .line {
-      height:10px;width:80%;border-radius:8px;
-      background:#d9c8ba;margin:10px auto;
-    }
-    .mock .line.short {width:52%}
-    .mock .mock-button {
-      border-radius:8px;background:#744894;color:white;
-      padding:6px 12px;font-size:12px;
-      display:inline-block;margin-top:10px;
-    }
-    .show-body {padding:24px}
-    .show-body p {color:var(--muted);font-size:14px}
-    .show-body h3 {font-size:24px}
-    .show-body small {font-size:11px;color:#958798}
-    .price-area {
-      display:grid;grid-template-columns:1fr 1fr;gap:22px;
-    }
-    .price {
-      border-radius:22px;background:white;
-      border:1px solid var(--border);
-      padding:35px;
-    }
-    .price.featured {
-      background:linear-gradient(145deg,#3f2b59,#231831);
-      color:var(--cream);border-color:#a982a1;
-    }
-    .price .amount {font:52px Georgia,serif;margin:16px 0}
-    .price .label {font-size:13px;letter-spacing:.11em;text-transform:uppercase}
-    .price p {font-size:14px;color:var(--muted)}
-    .price.featured p {color:#d7c8e4}
-    .price ul {padding-left:20px;line-height:2;font-size:14px}
-    .coming {
-      margin-top:24px;padding:22px 25px;border:1px solid #dfc8a5;
-      background:#fff8eb;border-radius:17px;
-      display:flex;align-items:center;justify-content:space-between;gap:18px;
-    }
-    .coming p {margin:4px 0 0;color:#776578;font-size:13px}
-    .support {
-      background:linear-gradient(110deg,#352149,#5b3c78);
-      color:#fff1df;border-radius:24px;padding:42px;
-      display:flex;align-items:center;justify-content:space-between;gap:40px;
-    }
-    .support p {max-width:650px;color:#e2d6e5}
-    .support .btn {white-space:nowrap}
-    .faq {display:grid;grid-template-columns:.75fr 1.25fr;gap:55px}
-    details {border-bottom:1px solid #dfd4c9;padding:18px 0}
-    summary {cursor:pointer;font-weight:700;list-style:none}
-    summary::-webkit-details-marker {display:none}
-    summary:after {content:"+";float:right;color:var(--purple);font-size:24px;line-height:1}
-    details[open] summary:after {content:"−"}
-    details p {font-size:14px;color:var(--muted);margin-bottom:0}
-    footer {background:#201530;color:#dacfe3;padding:43px 0}
-    .footer-line {display:flex;justify-content:space-between;gap:25px;align-items:center}
-    footer small {color:#b6a4c1}
-    .socials {display:flex;gap:11px;flex-wrap:wrap}
-    .socials a {
-      color:var(--cream);border:1px solid #a28ba857;
-      border-radius:10px;padding:9px 13px;font-size:13px
-    }
-    .is-hidden {display:none!important}
-    .no-links {font-size:13px;color:#bdadcb}
-    @media(max-width:820px){
-      .navlinks {gap:12px}
-      .navlinks a:not(.small-action) {display:none}
-      .hero-grid {grid-template-columns:1fr;padding-top:65px;padding-bottom:65px}
-      .art {min-height:320px}
-      .cards {grid-template-columns:1fr}
-      .price-area {grid-template-columns:1fr}
-      .faq {grid-template-columns:1fr;gap:6px}
-      .support {display:block;padding:28px}
-      .support .btn {margin-top:12px}
-    }
-    @media(max-width:540px){
-      .container {width:min(100% - 28px,1120px)}
-      .brand {font-size:16px}
-      .mark {width:37px;height:37px}
-      .nav {min-height:65px}
-      .section {padding:62px 0}
-      .hero-grid {gap:26px}
-      .art {min-height:270px}
-      .lead {font-size:16px}
-      .showcase {grid-template-columns:1fr}
-      .path {grid-template-columns:1fr 1fr}
-      .path span:nth-child(3) {border-left:0;border-top:1px solid #e9d9c0}
-      .path span:nth-child(4) {border-top:1px solid #e9d9c0}
-      .coming {display:block}
-      .coming .btn {margin-top:15px}
-      .footer-line {display:block}
-      .socials {margin-top:20px}
-    }
-    @media(prefers-reduced-motion:reduce){
-      html {scroll-behavior:auto}
-      .btn {transition:none}
-    }
-  </style>
+  <meta property="og:site_name" content="Магия и Математика">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Магия и Математика — образовательная RPG по математике ЕГЭ">
+  <meta property="og:description" content="Математика становится приключением. Фэнтези-RPG с интерактивной теорией и практикой. Первые три главы бесплатно.">
+  <meta property="og:url" content="https://bobbydi09.github.io/magic-and-math-site/">
+  <meta property="og:image" content="https://bobbydi09.github.io/magic-and-math-site/Academy.png">
+  <meta property="og:image:alt" content="Академия из игры «Магия и Математика»">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand">
-        <span class="mark">✧</span>
+      <a href="#top" class="brand" aria-label="Магия и Математика — в начало страницы">
+        <span class="mark" aria-hidden="true">✧</span>
         <span>Магия<br>и Математика</span>
       </a>
-      <nav class="navlinks" aria-label="Основная навигация">
+
+      <button class="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="site-nav" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="navlinks" aria-label="Основная навигация">
         <a href="#about">Об игре</a>
         <a href="#learning">Обучение</a>
+        <a href="#audience">Для кого</a>
         <a href="#access">Доступ</a>
         <a href="#questions">Вопросы</a>
         <a class="small-action" href="#contacts">Контакты</a>
@@ -282,373 +51,340 @@
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
+  <main id="main">
+
+    <!-- ===== 1. Главный экран ===== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow">Образовательная фэнтези-RPG</span>
-          <h1>Магия <em>и Математика</em></h1>
+          <h1 id="hero-title">Магия <em>и Математика</em></h1>
+          <p class="hero-subtitle">Математика становится приключением</p>
           <p class="lead">
-            Что, если подготовка к математике станет частью
-            настоящего приключения?
+            Исследуй волшебный мир, знакомься с персонажами, изучай математику
+            и решай задачи в увлекательном игровом формате.
           </p>
-          <p style="color:#d2c4db">
-            Исследуй волшебный мир, знакомься с персонажами,
-            изучай теорию и решай математические задачи.
-          </p>
+          <p class="hero-note">Образовательная RPG по профильной математике ЕГЭ.</p>
+
           <div class="actions">
-            <a class="btn btn-primary" href="#about">Открыть мир игры</a>
-            <a class="btn btn-outline" href="#access">Условия доступа</a>
+            <a class="btn btn-primary" href="#about">Узнать об игре</a>
+            <a class="btn btn-outline" href="#access">Бесплатные главы</a>
           </div>
-          <p class="micro">Первый публичный выпуск планируется в декабре 2026 года</p>
+
+          <p class="micro" data-release="hero">Первый публичный релиз планируется в декабре 2026 года.</p>
         </div>
 
-        <div class="art" aria-label="Художественная иллюстрация магической академии">
-          <svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Горы и сказочная академия">
-            <defs>
-              <linearGradient id="sky" x2="0" y2="1">
-                <stop stop-color="#403064"/>
-                <stop offset="1" stop-color="#a18bb8"/>
-              </linearGradient>
-              <linearGradient id="mount" x2="0" y2="1">
-                <stop stop-color="#bec6db"/>
-                <stop offset="1" stop-color="#565579"/>
-              </linearGradient>
-              <linearGradient id="grass" x2="0" y2="1">
-                <stop stop-color="#577d7a"/>
-                <stop offset="1" stop-color="#2f4e53"/>
-              </linearGradient>
-              <radialGradient id="glow">
-                <stop stop-color="#e1badf" stop-opacity=".5"/>
-                <stop offset="1" stop-color="#b98dc8" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="640" height="520" fill="url(#sky)"/>
-            <circle cx="468" cy="95" r="49" fill="#fbe3b3" opacity=".8"/>
-            <circle cx="468" cy="95" r="95" fill="#fbe3b3" opacity=".08"/>
-            <path d="M0 300 95 117 175 268 287 69 396 292 509 100 640 280V520H0Z"
-                  fill="url(#mount)"/>
-            <path d="m63 178 32-61 39 74-33-15-10 19-14-17Z
-                     M243 131l44-62 49 104-42-21-18 19-17-22Z
-                     M476 158l33-58 38 75-33-16-10 17Z"
-                  fill="#e7e9ee" opacity=".87"/>
-            <ellipse cx="335" cy="280" rx="220" ry="190" fill="url(#glow)"/>
-            <path d="M0 380Q150 305 300 365T640 355V520H0Z" fill="#51717a"/>
-            <path d="M0 422Q170 352 350 405T640 383V520H0Z" fill="url(#grass)"/>
-            <!-- Академия: стилизованная иллюстрация-заглушка -->
-            <g transform="translate(165 175)">
-              <ellipse cx="156" cy="206" rx="178" ry="21" fill="#233f4b" opacity=".42"/>
-              <rect x="32" y="98" width="255" height="113" fill="#c8b7be"/>
-              <path d="M25 102 159 45 295 102Z" fill="#7c5595"/>
-              <rect x="59" y="34" width="55" height="176" fill="#e2ccd1"/>
-              <path d="M50 34 87-30 123 34Z" fill="#78509b"/>
-              <rect x="204" y="42" width="53" height="167" fill="#dac5cf"/>
-              <path d="M194 42 230-20 267 42Z" fill="#75519b"/>
-              <rect x="134" y="8" width="54" height="202" fill="#e6d4d4"/>
-              <path d="M124 8 161-59 199 8Z" fill="#634383"/>
-              <rect x="8" y="123" width="42" height="87" fill="#c9b4c1"/>
-              <path d="M2 123 29 77 56 123Z" fill="#8b65a8"/>
-              <rect x="272" y="125" width="40" height="85" fill="#d1bdc4"/>
-              <path d="M266 125 291 82 317 125Z" fill="#8c64a7"/>
-              <path d="M145 211v-46a16 16 0 0 1 32 0v46Z" fill="#513a5e"/>
-              <g fill="#fbe0a1">
-                <rect x="78" y="57" width="12" height="29" rx="6"/>
-                <rect x="220" y="65" width="12" height="29" rx="6"/>
-                <rect x="153" y="37" width="13" height="30" rx="6"/>
-                <rect x="70" y="146" width="13" height="24" rx="6"/>
-                <rect x="230" y="146" width="13" height="24" rx="6"/>
-              </g>
-            </g>
-            <path d="M0 458Q120 401 254 462T640 443V520H0Z"
-                  fill="#294c52" opacity=".8"/>
-            <g fill="#e7d0fa" opacity=".85">
-              <circle cx="82" cy="82" r="3"/>
-              <circle cx="198" cy="49" r="2"/>
-              <circle cx="544" cy="221" r="3"/>
-              <circle cx="579" cy="75" r="2"/>
-              <circle cx="357" cy="58" r="2"/>
-            </g>
-          </svg>
-          <img class="real-art" src="Academy.png"
-               alt="Академия из игры «Магия и Математика»"
-               onerror="this.remove()"
-               onload="document.getElementById('art-note').textContent='Мир игры'">
-          <span class="art-caption" id="art-note">Художественная иллюстрация</span>
+        <div class="art">
+          <picture>
+            <source srcset="assets/images/academy.webp" type="image/webp">
+            <img src="Academy.png" width="941" height="1672"
+                 fetchpriority="high"
+                 alt="Академия из игры «Магия и Математика» среди гор и долины">
+          </picture>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <!-- ===== 2. О проекте ===== -->
+    <section class="section" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="section-heading">
           <span class="kicker">О проекте</span>
-          <h2>Больше, чем сборник задач</h2>
+          <h2 id="about-title">Больше, чем сборник задач</h2>
           <p class="intro">
-            «Магия и Математика» объединяет сюжетную RPG и
-            подготовку к профильному ЕГЭ.
-            Обучение — полноценная часть путешествия.
+            «Магия и Математика» объединяет сюжетное приключение, интерактивную
+            теорию и математическую практику. Ученик знакомится с игровым миром,
+            изучает новые темы, решает задачи и постепенно продвигается по истории.
+          </p>
+          <p class="intro" style="margin-top:12px">
+            Обучение здесь — полноценная часть игрового процесса, а не случайное
+            дополнение к развлечению.
           </p>
         </div>
+
         <div class="cards">
           <article class="card">
-            <div class="feature-icon">✦</div>
+            <div class="feature-icon" aria-hidden="true">✦</div>
             <h3>Приключение</h3>
-            <p>Магический мир, персонажи, тайны и путешествие
-               через разные локации.</p>
+            <p>Волшебный мир, сюжет, персонажи и путешествие через разные локации.</p>
           </article>
           <article class="card">
-            <div class="feature-icon">◈</div>
+            <div class="feature-icon" aria-hidden="true">◈</div>
             <h3>Понимание</h3>
-            <p>Интерактивные объяснения, схемы и вопросы,
-               помогающие разобраться в математике.</p>
+            <p>Интерактивные объяснения, математические схемы и вопросы для проверки понимания.</p>
           </article>
           <article class="card">
-            <div class="feature-icon">✓</div>
+            <div class="feature-icon" aria-hidden="true">✓</div>
             <h3>Практика</h3>
-            <p>Самостоятельное решение задач, проверка
-               ответов и постепенное продвижение.</p>
+            <p>Самостоятельное решение задач, проверка ответов и постепенное продвижение.</p>
           </article>
         </div>
-        <div class="path" aria-label="Как устроен игровой процесс">
-          <span>01 · Исследуй мир</span>
-          <span>02 · Изучай теорию</span>
-          <span>03 · Решай задачи</span>
-          <span>04 · Продвигайся дальше</span>
-        </div>
+
+        <p class="path" aria-label="Исследуй мир, изучай теорию, решай задачи, продвигайся дальше">
+          <span>Исследуй мир</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span>Изучай теорию</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span>Решай задачи</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span>Продвигайся дальше</span>
+        </p>
       </div>
     </section>
 
-    <section class="section section-alt" id="learning">
+    <!-- ===== 3. Обучение ===== -->
+    <section class="section section-alt" id="learning" aria-labelledby="learning-title">
       <div class="container">
         <div class="section-heading">
           <span class="kicker">Образовательная часть</span>
-          <h2>Учиться — значит понимать</h2>
+          <h2 id="learning-title">Учиться — значит понимать</h2>
           <p class="intro">
-            Игра рассчитана на школьников с разным уровнем
-            подготовки и может дополнять занятия в школе,
-            с репетитором или на курсах.
+            В игре предусмотрены интерактивная теория и математическая практика.
+            Цель — помочь ученику разобраться в материале, а не только запомнить
+            способ решения отдельных заданий.
           </p>
         </div>
-        <div class="showcase">
-          <article class="show-card">
-            <div class="show-image">
-              <div class="mock">
-                <div class="topline">Интерактивная теория</div>
-                <div class="formula">sin x = ½</div>
-                <div class="line"></div>
-                <div class="line short"></div>
-                <span class="mock-button">Далее</span>
-              </div>
-              <img src="assets/theory.webp"
-                   alt="Экран интерактивной теории из игры"
-                   loading="lazy" onerror="this.remove()"
-                   onload="this.parentElement.querySelector('.mock').style.display='none'">
-            </div>
-            <div class="show-body">
-              <h3>Интерактивная теория</h3>
-              <p>Материал объясняется последовательно,
-                 с математическими иллюстрациями и вопросами.</p>
-              <small>Рекомендуется заменить схему реальным скриншотом.</small>
-            </div>
+
+        <div class="learn-grid">
+          <article class="learn-card">
+            <div class="feature-icon" aria-hidden="true">◈</div>
+            <h3>Интерактивная теория</h3>
+            <p>Пошаговые объяснения, математические иллюстрации и вопросы, помогающие проверить понимание.</p>
           </article>
-          <article class="show-card">
-            <div class="show-image">
-              <div class="mock">
-                <div class="topline">Задача 1 из 5</div>
-                <div class="formula">√(15 − 2x) = 3</div>
-                <div class="line short"></div>
-                <span class="mock-button">Проверить</span>
-              </div>
-              <img src="assets/practice.webp"
-                   alt="Экран практики из игры"
-                   loading="lazy" onerror="this.remove()"
-                   onload="this.parentElement.querySelector('.mock').style.display='none'">
-            </div>
-            <div class="show-body">
-              <h3>Математическая практика</h3>
-              <p>Решай задания, вводи ответы и проверяй
-                 полученный результат.</p>
-              <small>Рекомендуется заменить схему реальным скриншотом.</small>
-            </div>
+          <article class="learn-card">
+            <div class="feature-icon" aria-hidden="true">✓</div>
+            <h3>Математическая практика</h3>
+            <p>Самостоятельное решение заданий с вводом и проверкой ответов.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="access">
+    <!-- ===== 4. Для кого ===== -->
+    <section class="section" id="audience" aria-labelledby="audience-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Для кого игра</span>
+          <h2 id="audience-title">Для разных уровней подготовки</h2>
+          <p class="intro">
+            У каждого ученика свои трудности и цели. Поэтому игра разрабатывается
+            с расчётом на разные уровни математической подготовки.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="feature-icon" aria-hidden="true">✎</div>
+            <h3>Хочу разобраться</h3>
+            <p>Для тех, кому нужны последовательные объяснения, возможность спокойно изучать материал и закреплять знания практикой.</p>
+          </article>
+          <article class="card">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3>Готовлюсь к ЕГЭ</h3>
+            <p>Дополнительный способ заниматься профильной математикой, совмещая образовательные задания с игровым прогрессом.</p>
+          </article>
+          <article class="card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3>Хочу большего</h3>
+            <p>Для учеников, которым интересна более сложная математика. Развитие дополнительных углублённых материалов входит в дальнейшие планы проекта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Почему такой формат ===== -->
+    <section class="section section-alt" id="format" aria-labelledby="format-title">
+      <div class="container">
+        <div class="format-box">
+          <div>
+            <span class="kicker">Формат</span>
+            <h2 id="format-title">Когда обучение становится частью приключения</h2>
+            <p>
+              Обычную подготовку можно дополнить другим форматом: изучать материал
+              и решать задачи, одновременно продвигаясь по сюжету игры.
+            </p>
+          </div>
+          <ul class="format-list">
+            <li>Знания связаны с игровым прогрессом.</li>
+            <li>Теория и практика находятся в одном приложении.</li>
+            <li>Игровой мир создаёт дополнительную мотивацию возвращаться к занятиям.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Доступ ===== -->
+    <section class="section" id="access" aria-labelledby="access-title">
       <div class="container">
         <div class="section-heading">
           <span class="kicker">Доступ к игре</span>
-          <h2>Начни приключение бесплатно</h2>
+          <h2 id="access-title">Начни приключение бесплатно</h2>
           <p class="intro">
-            Сначала познакомься с игрой и её обучением.
-            Решение о покупке можно принять позднее.
+            Сначала познакомься с игрой и её обучением. Решение о покупке
+            можно принять позднее.
           </p>
         </div>
+
         <div class="price-area">
           <article class="price">
-            <span class="label">Знакомство с игрой</span>
-            <div class="amount">0 ₽</div>
+            <span class="label">Бесплатная версия</span>
+            <div class="amount" data-price="free">0 ₽</div>
             <h3>Первые три главы</h3>
-            <p>Бесплатная часть приключения.</p>
             <ul>
               <li>Знакомство с игровым миром</li>
               <li>Сюжет и персонажи</li>
-              <li>Теория и практика первых глав</li>
+              <li>Интерактивная теория и практика первых глав</li>
             </ul>
           </article>
+
           <article class="price featured">
-            <span class="label">Стартовая цена</span>
-            <div class="amount">899 ₽</div>
-            <h3>Платный доступ</h3>
-            <p>Продолжение путешествия и образовательное
-               содержание платной части.</p>
-            <ul>
-              <li>Продолжение сюжета</li>
-              <li>Доступ к содержанию платной версии</li>
-              <li>Дальнейшее развитие проекта</li>
-            </ul>
+            <span class="label">Платная версия · стартовая цена</span>
+            <div class="amount" data-price="paid">899 ₽</div>
+            <h3>Продолжение приключения</h3>
+            <p>Доступ к продолжению приключения и содержанию платной версии.</p>
+            <p class="note">В дальнейшем цена может повышаться по мере развития игры.</p>
           </article>
         </div>
-        <div class="coming">
+
+        <div class="coming" data-when="planned">
           <div>
             <strong>Первый публичный релиз готовится</strong>
-            <p>Точный состав выпуска и ссылка на установку
-               будут опубликованы после подтверждения релиза.</p>
+            <p>Точный состав выпуска и ссылка на установку будут опубликованы после подтверждения релиза.</p>
           </div>
-          <a class="btn btn-primary is-hidden"
-             data-link="download" href="#">Скачать игру</a>
-          <span id="download-pending" style="font-size:13px;color:#735c78">
-            Ссылка появится после публикации
+          <span class="pending-text" data-download-pending>
+            Ссылка на установку появится после выхода игры.
           </span>
         </div>
+
+        <div class="coming" data-when="live" hidden>
+          <div>
+            <strong>Игра доступна для установки</strong>
+          </div>
+        </div>
+
+        <p style="margin:18px 0 0">
+          <a class="btn btn-primary" data-download href="#" hidden>Скачать игру</a>
+        </p>
       </div>
     </section>
 
-    <section class="section section-alt" id="support">
+    <!-- ===== 7. Развитие проекта ===== -->
+    <section class="section section-alt" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Развитие</span>
+          <h2 id="roadmap-title">Мир продолжит развиваться</h2>
+          <p class="intro">
+            «Магия и Математика» — независимый образовательный проект, который
+            разрабатывается одним автором. Первый релиз — начало дальнейшей работы
+            над игровым миром, образовательным содержанием и новыми возможностями.
+          </p>
+        </div>
+
+        <ol class="roadmap">
+          <li>Первый публичный релиз</li>
+          <li>Доработка образовательного содержания</li>
+          <li>Расширение игрового мира</li>
+          <li>Развитие дополнительных возможностей</li>
+        </ol>
+        <p class="intro" style="margin-top:18px;font-size:15px">
+          Все перечисленные этапы — планы, а не уже реализованные функции.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 8. Поддержка проекта ===== -->
+    <section class="section" id="support" aria-labelledby="support-title">
       <div class="container">
         <div class="support">
           <div>
             <span class="eyebrow">Независимый проект</span>
-            <h2 style="margin:5px 0">Помочь развитию мира</h2>
+            <h2 id="support-title">Помочь развитию «Магии и Математики»</h2>
             <p>
-              Проект создаётся одним разработчиком.
-              После релиза планируется расширение учебных
-              материалов, игрового мира и возможностей.
-              Поддержка добровольна и не является покупкой игры.
+              Если вам близка идея образовательной игры, вы можете добровольно
+              поддержать её дальнейшее развитие.
             </p>
             <p>
-              Крупные предложения по созданию персонажей,
-              зданий и других элементов мира могут обсуждаться
-              индивидуально, без гарантии автоматической реализации.
+              Для желающих внести более крупный вклад возможно индивидуальное
+              обсуждение идей персонажей, зданий или отдельных элементов игрового мира.
+            </p>
+            <p class="note-strong">
+              Реализация предложений обсуждается отдельно и не гарантируется автоматически.
             </p>
           </div>
-          <a class="btn btn-primary" href="#contacts">
-            Связаться с автором
+          <a class="btn btn-primary" data-link="contact" href="#contacts" hidden>
+            Обсудить поддержку
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="questions">
+    <!-- ===== 9. Частые вопросы ===== -->
+    <section class="section" id="questions" aria-labelledby="questions-title">
       <div class="container faq">
         <div>
           <span class="kicker">Вопросы и ответы</span>
-          <h2>Частые вопросы</h2>
-          <p class="intro">Основная информация о проекте.</p>
+          <h2 id="questions-title">Частые вопросы</h2>
         </div>
         <div>
           <details>
-            <summary>Это игра или подготовка к экзамену?</summary>
-            <p>И то и другое. Сюжетное фэнтезийное приключение
-               объединено с интерактивной теорией и математической практикой.</p>
+            <summary>Это игра или подготовка к ЕГЭ?</summary>
+            <p>И то и другое. Сюжетная RPG объединена с интерактивной теорией и математической практикой.</p>
           </details>
           <details>
-            <summary>К какому экзамену готовит игра?</summary>
-            <p>Первоначально проект ориентирован на профильный ЕГЭ
-               по математике.</p>
+            <summary>Для какого экзамена она предназначена?</summary>
+            <p>В первую очередь для профильного ЕГЭ по математике.</p>
           </details>
           <details>
-            <summary>Можно ли играть бесплатно?</summary>
-            <p>Первые три главы предусмотрены для бесплатного
-               знакомства с игрой.</p>
+            <summary>Можно ли попробовать бесплатно?</summary>
+            <p>Да. Первые три главы предусмотрены для бесплатного знакомства.</p>
           </details>
           <details>
-            <summary>Заменяет ли игра преподавателя?</summary>
-            <p>Она может использоваться для самостоятельных занятий
-               и как дополнение к школе, репетитору или курсам.
-               Определённый результат экзамена не гарантируется.</p>
+            <summary>Сколько стоит продолжение?</summary>
+            <p>Планируемая стартовая цена платного доступа — <span data-price="paid">899 ₽</span>.</p>
           </details>
           <details>
-            <summary>Когда будет доступна игра?</summary>
-            <p>Первый публичный выпуск планируется на декабрь
-               2026 года. Дата будет подтверждена отдельно.</p>
+            <summary>Заменяет ли игра репетитора?</summary>
+            <p>Игра может дополнять занятия в школе, с репетитором или на курсах, а также использоваться для самостоятельной подготовки. Она не гарантирует определённый результат экзамена.</p>
+          </details>
+          <details>
+            <summary>Когда состоится релиз?</summary>
+            <p data-release="faq">Первый публичный выпуск планируется в декабре 2026 года. Точная дата будет опубликована отдельно.</p>
           </details>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer id="contacts">
-    <div class="container footer-line">
-      <div>
-        <div class="brand"><span class="mark">✧</span>
-          <span>Магия<br>и Математика</span>
+    <!-- ===== 10. Сообщества и контакты ===== -->
+    <section class="section section-alt" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Контакты</span>
+          <h2 id="contacts-title">Следите за развитием игры</h2>
         </div>
-        <p><small>Независимая образовательная фэнтези-RPG</small></p>
-        <small>© <span id="year"></span> «Магия и Математика»</small>
-      </div>
-      <div>
-        <div class="socials">
-          <a href="#" data-link="telegram">Telegram</a>
-          <a href="#" data-link="vk">ВКонтакте</a>
-          <a href="#" data-link="max">MAX</a>
-          <a href="#" data-link="youtube">YouTube</a>
-          <a href="#" data-link="email">Написать автору</a>
-        </div>
-        <p class="no-links" id="social-pending">
-          Официальные ссылки будут добавлены после создания сообществ.
+
+        <nav class="socials" aria-label="Сообщества и контакты">
+          <a href="#" data-link="telegram" hidden>Telegram</a>
+          <a href="#" data-link="vk" hidden>ВКонтакте</a>
+          <a href="#" data-link="max" hidden>MAX</a>
+          <a href="#" data-link="youtube" hidden>YouTube</a>
+          <a href="#" data-link="contact" hidden>Контакт разработчика</a>
+        </nav>
+        <p class="no-links" id="links-pending" style="margin-top:16px">
+          Ссылки на официальные сообщества появятся после их создания.
         </p>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">✧</span>
+        <span>Магия<br>и Математика</span>
+      </div>
+      <p>© 2026 Магия и Математика</p>
     </div>
   </footer>
-
-  <script>
-    // ЗАПОЛНИ ЭТИ ССЫЛКИ ПЕРЕД ПУБЛИКАЦИЕЙ.
-    // Пустые ссылки автоматически скрываются.
-    const SITE_LINKS = {
-      telegram: "",
-      vk: "",
-      max: "",
-      youtube: "",
-      email: "",
-      download: ""
-    };
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    let socialCount = 0;
-
-    document.querySelectorAll("[data-link]").forEach(link => {
-      const key = link.dataset.link;
-      const url = SITE_LINKS[key];
-
-      if (!url) {
-        link.classList.add("is-hidden");
-      } else {
-        link.href = url;
-        if (key !== "download") socialCount++;
-        if (key === "download") {
-          document.getElementById("download-pending").remove();
-        }
-      }
-    });
-
-    if (socialCount > 0) {
-      document.getElementById("social-pending").remove();
-    }
-  </script>
 </body>
 </html>
