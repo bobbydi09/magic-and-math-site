@@ -4,7 +4,7 @@
 Статический сайт без сборки. Основной адрес:
 https://mathnmagic.ru/
 
-Контакт разработчика: mathnmagic@mail.ru.
+Контакт разработчика: info@magicnmath.ru.
 Копия на GitHub Pages: https://bobbydi09.github.io/magic-and-math-site/.
 
 ## Структура
