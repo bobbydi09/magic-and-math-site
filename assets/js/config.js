@@ -35,6 +35,6 @@ window.SITE_CONFIG = {
     vk: "https://vk.ru/club243076293",
     max: "https://max.ru/channel_Mathnmight",
     youtube: "https://www.youtube.com/@%D0%9C%D0%B0%D0%B3%D0%B8%D1%8F%D0%B8%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0",
-    contact: ""
+    contact: "mailto:info@magicnmath.ru"
   }
 };
